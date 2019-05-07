@@ -20,23 +20,19 @@ cram() {
 }
 ```
 
+`alias ll='ls -FGlAhp'`                       # Preferred 'ls' implementation
 
-# alias cp='cp -iv'                           # Preferred 'cp' implementation
-# alias mv='mv -iv'                           # Preferred 'mv' implementation
-# alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
-alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
-# alias less='less -FSRXc'                    # Preferred 'less' implementation
-cd() { builtin cd "$@"; ls; }               # Always list directory contents upon 'cd'
-# alias ..='cd ../'                           # Go back 1 directory level
-alias ...='cd ../../'                       # Go back 2 directory levels
-alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
+`cd() { builtin cd "$@"; ls; }`               # Always list directory contents upon 'cd'
+
+`alias ...='cd ../../'`                       # Go back 2 directory levels
+`alias f='open -a Finder ./'`                 # f:            Opens current directory in MacOS Finder
 
 #   lr:  Full Recursive Directory Listing
 #   ------------------------------------------
-alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
+`alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'`
 
 #   extract:  Extract most know archives with one command
-#   ---------------------------------------------------------
+```
 extract () {
     if [ -f $1 ] ; then
       case $1 in
@@ -57,24 +53,4 @@ extract () {
          echo "'$1' is not a valid file"
      fi
 }
-
-#   Change Prompt
-#   ------------------------------------------------------------
-# export PS1="___________________    | \w @ \h (\u) \n| => "
-# export PS2="| => "
-
-#   Set Default Editor (change 'Nano' to the editor of your choice)
-#   ------------------------------------------------------------
-    # export EDITOR=/usr/bin/nano
-
-#   Set default blocksize for ls, df, du
-#   from this: http://hints.macworld.com/comment.php?mode=view&cid=24491
-#   ------------------------------------------------------------
-    # export BLOCKSIZE=1k
-
-#   Add color to terminal
-#   (this is all commented out as I use Mac Terminal Profiles)
-#   from http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
-#   ------------------------------------------------------------
-  # export CLICOLOR=1
-  # export LSCOLORS=ExFxBxDxCxegedabagacad
+```
