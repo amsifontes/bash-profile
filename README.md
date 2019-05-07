@@ -5,12 +5,13 @@ added by Anaconda3 4.4.0 installer
 
 `export PATH="/Users/asifontes/anaconda/bin:$PATH"`
 
-added by self
 
-#create 'chrome' command to open .html files
+
+create 'chrome' command to open .html files
 
 `alias chrome="open -a 'Google Chrome'"`
 
+open same html file in chrome and atom
 ```
 cram() {
   echo "let's get crammin' "
@@ -20,18 +21,29 @@ cram() {
 }
 ```
 
-`alias ll='ls -FGlAhp'`                       # Preferred 'ls' implementation
+Preferred 'ls' implementation
 
-`cd() { builtin cd "$@"; ls; }`               # Always list directory contents upon 'cd'
+`alias ll='ls -FGlAhp'`
 
-`alias ...='cd ../../'`                       # Go back 2 directory levels
-`alias f='open -a Finder ./'`                 # f:            Opens current directory in MacOS Finder
 
-#   lr:  Full Recursive Directory Listing
-#   ------------------------------------------
+Always list directory contents upon 'cd'
+
+`cd() { builtin cd "$@"; ls; }`
+
+Go back 2 directory levels
+
+`alias ...='cd ../../'`
+
+f:            Opens current directory in MacOS Finder
+
+`alias f='open -a Finder ./'`
+
+lr:  Full Recursive Directory Listing
+
 `alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'`
 
-#   extract:  Extract most know archives with one command
+extract:  Extract most know archives with one command
+
 ```
 extract () {
     if [ -f $1 ] ; then
